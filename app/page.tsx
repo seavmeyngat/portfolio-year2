@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCode, faDatabase, faCogs } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faJsSquare, faReact, faCss3 } from "@fortawesome/free-brands-svg-icons";
 import { FiFigma } from "react-icons/fi";
+import Image from 'next/image';
 import { FaDocker } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-const Slider = require("react-slick").default;
+import Slider from "react-slick";
 
 export default function Page() {
-  // Slick settings
   const settings = {
     autoplay: true,
     autoplaySpeed: 0,
@@ -43,15 +43,12 @@ export default function Page() {
     ],
   };
 
-  // State to control menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Toggle the menu when the hamburger icon is clicked
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Hide menu after clicking a menu item
   const handleMenuItemClick = () => {
     setIsMenuOpen(false);
   };
@@ -66,7 +63,6 @@ export default function Page() {
             <span className="text-yellow-400">NGAT</span>
             <br /> Seavmey
           </div>
-
 
           {/* Hamburger Icon (only visible on small screens) */}
           <div className="lg:hidden">
@@ -86,7 +82,6 @@ export default function Page() {
             <li><a href="#contact" className="hover:text-yellow-400" onClick={handleMenuItemClick}>Contact</a></li>
           </ul>
         </nav>
-
       </header>
 
       {/* About Me Section */}
@@ -95,10 +90,12 @@ export default function Page() {
           {/* Image Section */}
           <div className="lg:w-1/2 flex justify-center">
             <div className="rounded-full w-[400px] h-[400px] shadow-[0_0_500px_rgba(192,_192,_192,_0.5),_0_0_700px_rgba(192,_192,_192,_0.5)] p-[25px] bg-white">
-              <img
+              <Image
                 src="/images/meys.jpg"
                 alt="Ngat Seavmey"
                 className="w-full h-full object-cover rounded-full float-left mr-8 sm:w-[100px] md:w-[100px] lg:w-[400px]"
+                width={400}
+                height={400}
               />
             </div>
           </div>
@@ -130,7 +127,7 @@ export default function Page() {
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                I'm Ngat Seavmey
+                I&apos;m Ngat Seavmey
               </motion.span>
               .
               <motion.span
@@ -199,14 +196,20 @@ export default function Page() {
         <div className="mt-10 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { id: 1, img: "/images/rabbitSchool.png", link: "https://rabbit-school.vercel.app/" },
-            { id: 2, img: "/images/minimalblock.png", link: "https://minimal-blog-beryl.vercel.app/" },
+            { id: 2, img: "/images/minimalblock.png", link: "https://minimal-blog-omega.vercel.app/" },
             { id: 3, img: "/images/weater.png", link: "https://pp-weather-azure.vercel.app/" },
             { id: 4, img: "/images/FairyTale.png", link: "https://fairy-phi.vercel.app/" },
             { id: 5, img: "/images/Selling-Bicycle.png", link: "https://limsopheak16.github.io/Selling-Bicycle/" },
             { id: 6, img: "/images/Survey.png", link: "https://survey-and-dashboard.vercel.app/" },
           ].map((project) => (
             <div key={project.id} className="bg-gray-200 p-4 rounded-lg shadow-md">
-              <img src={project.img} alt={`Project ${project.id}`} className="w-full h-40 object-cover rounded-lg" />
+              <Image
+                src={project.img}
+                alt={`Project ${project.id}`}
+                width={400}
+                height={200}
+                className="w-full h-40 object-cover rounded-lg"
+              />
               <div className="text-center mt-4">
                 <a
                   href={project.link}
@@ -222,7 +225,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Footer Section */}
       <section id="contact" className=" bg-transparent text-center text-white">
         <h1 className="text-4xl font-semibold font-knewave">Contact</h1>
         <div className="mt-8 text-center">
