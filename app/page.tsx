@@ -94,16 +94,19 @@ export default function Page() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="rounded-full w-[200px] h-[200px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] lg:w-[400px] lg:h-[400px] shadow-[0_0_500px_rgba(192,_192,_192,_0.5),_0_0_700px_rgba(192,_192,_192,_0.5)] p-[25px] bg-white">
+            <div
+              className="rounded-full p-[25px] bg-white w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]"
+            >
               <Image
                 src="/images/meys.jpg"
                 alt="Ngat Seavmey"
-                className="w-full h-full object-cover rounded-full float-left mr-8 sm:w-[200px] md:w-[200px] lg:w-[400px]"
+                className="w-full h-full object-cover rounded-full"
                 width={400}
                 height={400}
               />
             </div>
           </motion.div>
+
 
 
           {/* Text Section */}
