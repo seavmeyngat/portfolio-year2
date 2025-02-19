@@ -73,7 +73,7 @@ export default function Page() {
 
           {/* Menu Section (only visible when the menu is open) */}
           <ul
-            className={`lg:flex lg:space-x-6 lg:text-2xl lg:gap-5 font-knewave ${isMenuOpen ? "absolute top-0 left-0 w-full bg-black text-center py-5 space-y-4 z-10" : "hidden"
+            className={`lg:flex lg:space-x-6 lg:text-2xl lg:gap-5 ${isMenuOpen ? "absolute top-0 left-0 w-full bg-black text-center py-5 space-y-4 z-10" : "hidden"
               } lg:block`}
           >
             <li><a href="#about" className="hover:text-yellow-400" onClick={handleMenuItemClick}>About Me</a></li>
