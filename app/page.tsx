@@ -59,7 +59,7 @@ export default function Page() {
       <header className="bg-transparent py-4">
         <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* Logo Section */}
-          <div className="text-4xl font-extrabold text-white font-knewave sm:text-3xl md:text-3xl lg:text-5xl">
+          <div className="text-4xl  text-white font-knewave sm:text-3xl md:text-3xl lg:text-5xl">
             <span className="text-yellow-400">NGAT</span>
             <br /> Seavmey
           </div>
@@ -85,25 +85,36 @@ export default function Page() {
       </header>
 
       {/* About Me Section */}
-      <section id="about" className="py-20 max-w-7xl mx-auto">
+      <section id="about" className="py-10 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Image Section */}
-          <div className="lg:w-1/2 flex justify-center">
-            <div className="rounded-full w-[400px] h-[400px] shadow-[0_0_500px_rgba(192,_192,_192,_0.5),_0_0_700px_rgba(192,_192,_192,_0.5)] p-[25px] bg-white">
+          <motion.div
+            className="lg:w-1/2 flex justify-center"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div className="rounded-full w-[200px] h-[200px] sm:w-[100px] sm:h-[100px] md:w-[150px] md:h-[150px] lg:w-[400px] lg:h-[400px] shadow-[0_0_500px_rgba(192,_192,_192,_0.5),_0_0_700px_rgba(192,_192,_192,_0.5)] p-[25px] bg-white">
               <Image
                 src="/images/meys.jpg"
                 alt="Ngat Seavmey"
-                className="w-full h-full object-cover rounded-full float-left mr-8 sm:w-[100px] md:w-[100px] lg:w-[400px]"
+                className="w-full h-full object-cover rounded-full float-left mr-8 sm:w-[200px] md:w-[200px] lg:w-[400px]"
                 width={400}
                 height={400}
               />
             </div>
-          </div>
+          </motion.div>
+
 
           {/* Text Section */}
-          <div className="lg:w-1/2 text-center lg:text-left">
+          <motion.div
+            className="lg:w-1/2 text-center lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             <motion.h1
-              className="text-4xl font-semibold font-knewave "
+              className="text-4xl font-semibold "
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -136,16 +147,15 @@ export default function Page() {
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                {" "}I’m a Full Stack Developer passionate about building responsive, user-friendly websites and always improving my skills.
+                {" "}I am a Full Stack Developer passionate about building responsive, user-friendly websites and always improving my skills.
               </motion.span>
             </motion.p>
-          </div>
+          </motion.div>
         </div>
       </section>
-
       {/* Skills Section */}
       <section id="skills" className="py-0 bg-transparent">
-        <h1 className="text-4xl font-semibold text-center font-knewave">Skills</h1>
+        <h1 className="text-4xl font-semibold text-center ">Skills</h1>
         <Slider {...settings} className="mt-8">
           <div className="p-2 m-2 text-center">
             <FontAwesomeIcon icon={faCode} className="text-6xl text-yellow-400" />
@@ -192,7 +202,7 @@ export default function Page() {
 
       {/* Projects Section */}
       <section id="projects" className="py-10 bg-transparent">
-        <h1 className="text-4xl font-semibold text-center font-knewave">Projects</h1>
+        <h1 className="text-4xl font-semibold text-center">Projects</h1>
         <div className="mt-10 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { id: 1, img: "/images/rabbitSchool.png", link: "https://rabbit-school.vercel.app/" },
@@ -227,14 +237,14 @@ export default function Page() {
 
       {/* Footer Section */}
       <section id="contact" className=" bg-transparent text-center text-white">
-        <h1 className="text-4xl font-semibold font-knewave">Contact</h1>
-        <div className="mt-8 text-center">
+        <h1 className="text-4xl font-semibold">Contact</h1>
+        <div className="mt-8 text-center text-2xl sm:text-2xl md:text-2xl lg:text-3xl">
           <p className=" text-[23px]">Email: seavmey.ngat@institute.pse.ngo</p>
           <p className=" text-[23px]">Phone: (+855) 97 843 2206</p>
         </div>
         {/* Footer */}
         <footer className="bg-transparent py-6 text-center">
-          <p className="text-[20px]">© 2025 Ngat Seavmey</p>
+          <p className=" text-2xl sm:text-2xl md:text-2xl lg:text-2xl mt-4">© 2025 Ngat Seavmey</p>
         </footer>
       </section>
     </div>
