@@ -158,7 +158,7 @@ export default function Page() {
 
             {/* Download CV Button */}
             <motion.a
-              href="/images/cv.pdf"  // Replace with the correct path to your CV
+              href="/images/Ngat SeavMey’s Curriculum Vitae.pdf"  // Replace with the correct path to your CV
               download
               className="mt-6 inline-block px-6 py-3 bg-yellow-400 text-white text-xl font-semibold rounded-md hover:bg-yellow-600 transition duration-300"
               initial={{ opacity: 0 }}
