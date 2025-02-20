@@ -1,15 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faCode, faDatabase, faCogs } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faJsSquare, faReact, faCss3 } from "@fortawesome/free-brands-svg-icons";
-import { FiFigma } from "react-icons/fi";
 import Image from 'next/image';
-import { FaDocker } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCss3, faReact, faJsSquare, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { FaDocker } from "react-icons/fa";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FiFigma } from "react-icons/fi";
+import { SiMongodb, SiStrapi, SiTailwindcss, SiBootstrap, SiVercel, SiTrello, SiNotion } from "react-icons/si";
+
 
 export default function Page() {
   const settings = {
@@ -95,7 +99,7 @@ export default function Page() {
             transition={{ duration: 0.7 }}
           >
             <div
-              className="rounded-full p-[25px] bg-white w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]"
+              className="rounded-full p-[25px] bg-white w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px]  hover:scale-105"
             >
               <Image
                 src="/images/meys.jpg"
@@ -107,8 +111,6 @@ export default function Page() {
             </div>
           </motion.div>
 
-
-
           {/* Text Section */}
           <motion.div
             className="lg:w-1/2 text-center lg:text-left"
@@ -117,7 +119,7 @@ export default function Page() {
             transition={{ duration: 0.7 }}
           >
             <motion.h1
-              className="text-4xl font-semibold "
+              className="text-4xl font-semibold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -153,9 +155,22 @@ export default function Page() {
                 {" "}I am a Full Stack Developer passionate about building responsive, user-friendly websites and always improving my skills.
               </motion.span>
             </motion.p>
+
+            {/* Download CV Button */}
+            <motion.a
+              href="/images/cv.pdf"  // Replace with the correct path to your CV
+              download
+              className="mt-6 inline-block px-6 py-3 bg-yellow-400 text-white text-xl font-semibold rounded-md hover:bg-yellow-600 transition duration-300"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
+            >
+              Download CV
+            </motion.a>
           </motion.div>
         </div>
       </section>
+
       {/* Skills Section */}
       <section id="skills" className="py-0 bg-transparent">
         <h1 className="text-4xl font-semibold text-center ">Skills</h1>
@@ -170,7 +185,7 @@ export default function Page() {
           </div>
           <div className="p-2 m-2 text-center">
             <FontAwesomeIcon icon={faReact} className="text-6xl text-yellow-400" />
-            <h1>REACT JS</h1>
+            <h1>React</h1>
           </div>
           <div className="p-2 m-2 text-center">
             <FontAwesomeIcon icon={faJsSquare} className="text-6xl text-yellow-400" />
@@ -193,12 +208,36 @@ export default function Page() {
             <h1>FIGMA</h1>
           </div>
           <div className="p-2 m-2 text-center">
-            <FontAwesomeIcon icon={faReact} className="text-6xl text-yellow-400" />
-            <h1>NEXT JS</h1>
-          </div>
-          <div className="p-2 m-2 text-center">
             <FaDocker className="text-6xl text-yellow-400 mx-auto" />
             <h1>DOCKER</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiMongodb className="text-6xl text-yellow-400 mx-auto" />
+            <h1>MONGODB</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiStrapi className="text-6xl text-yellow-400 mx-auto" />
+            <h1>STRAPI</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiTailwindcss className="text-6xl text-yellow-400 mx-auto" />
+            <h1>TAILWIND CSS</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiBootstrap className="text-6xl text-yellow-400 mx-auto" />
+            <h1>BOOTSTRAP</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiVercel className="text-6xl text-yellow-400 mx-auto" />
+            <h1>VERCEL</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiTrello className="text-6xl text-yellow-400 mx-auto" />
+            <h1>TRELLO</h1>
+          </div>
+          <div className="p-2 m-2 text-center">
+            <SiNotion className="text-6xl text-yellow-400 mx-auto" />
+            <h1>NOTION</h1>
           </div>
         </Slider>
       </section>
@@ -206,7 +245,7 @@ export default function Page() {
       {/* Projects Section */}
       <section id="projects" className="py-10 bg-transparent">
         <h1 className="text-4xl font-semibold text-center">Projects</h1>
-        <div className="mt-10 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-10 max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {[
             { id: 1, img: "/images/rabbitSchool.png", link: "https://rabbit-school.vercel.app/" },
             { id: 2, img: "/images/minimalblock.png", link: "https://minimal-blog-omega.vercel.app/" },
@@ -215,7 +254,7 @@ export default function Page() {
             { id: 5, img: "/images/Selling-Bicycle.png", link: "https://limsopheak16.github.io/Selling-Bicycle/" },
             { id: 6, img: "/images/Survey.png", link: "https://survey-and-dashboard.vercel.app/" },
           ].map((project) => (
-            <div key={project.id} className="bg-gray-200 p-4 rounded-lg shadow-md">
+            <div key={project.id} className="bg-gray-200 p-4 rounded-lg shadow-md hover:scale-105">
               <Image
                 src={project.img}
                 alt={`Project ${project.id}`}
@@ -228,7 +267,7 @@ export default function Page() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-yellow-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-yellow-700"
+                  className="inline-block bg-yellow-400 text-white px-4 py-2 rounded-lg shadow-md hover:bg-yellow-600"
                 >
                   View Project
                 </a>
